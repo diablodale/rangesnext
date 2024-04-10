@@ -29,7 +29,7 @@ requires r::view<V> class enumerate_view
     class sentinel;
 
     template <bool Const>
-    struct iterator {
+    class iterator {
       private:
         using Base = std::conditional_t<Const, const V, V>;
         using count_type = decltype([] {
@@ -213,7 +213,7 @@ requires r::view<V> class enumerate_view
     };
 
     template <bool Const>
-    struct sentinel {
+    class sentinel {
       private:
         friend iterator<false>;
         friend iterator<true>;
