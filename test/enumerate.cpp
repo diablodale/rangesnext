@@ -35,7 +35,7 @@ TEST_CASE("Input ranges", "[Enumerate]") {
         std::vector<std::tuple<ptrdiff_t, int>>{{0, 1}, {1, 2}, {2, 3}, {3, 4}};
 
     CHECK(r::equal(e, expected, [](const auto &a, const auto &b) {
-        return std::tuple{a.index, a.value} == b;
+        return a == b;
     }));
 }
 
@@ -49,7 +49,7 @@ TEST_CASE("Bidi ranges", "[Enumerate]") {
 
     CHECK(r::equal(r::reverse_view(v | rangesnext::enumerate), expected,
                    [](const auto &a, const auto &b) {
-                       return std::tuple{a.index, a.value} == b;
+                       return a == b;
                    }));
 }
 

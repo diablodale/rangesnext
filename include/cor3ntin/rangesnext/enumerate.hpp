@@ -8,6 +8,7 @@ Licenced under Boost Software License license. See LICENSE.md for details.
 
 #include <cor3ntin/rangesnext/__detail.hpp>
 #include <ranges>
+#include <tuple>
 
 namespace cor3ntin::rangesnext {
 
@@ -41,12 +42,7 @@ requires r::view<V> class enumerate_view
         }());
 
         template <typename T>
-        struct result {
-            const count_type index;
-            T value;
-
-            constexpr bool operator==(const result &other) const = default;
-        };
+        using result = std::tuple<const count_type, T>;
 
         r::iterator_t<Base> current_ = r::iterator_t<Base>();
         count_type pos_ = 0;
