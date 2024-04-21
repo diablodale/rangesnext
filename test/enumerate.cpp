@@ -4,8 +4,13 @@ Copyright (c) 2020 - present Corentin Jabot
 Licenced under Boost Software License license. See LICENSE.md for details.
 */
 
+#ifdef CATCH2V2
 #include <catch2/catch.hpp>
+#else
+#include <catch2/catch_test_macros.hpp>
+#endif
 #include <cor3ntin/rangesnext/enumerate.hpp>
+#include <algorithm>
 #include <list>
 #include <sstream>
 #include <vector>
