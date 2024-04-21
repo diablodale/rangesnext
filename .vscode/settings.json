@@ -1,0 +1,19 @@
+{
+    "cmake.configureOnOpen": false,
+    "cmake.parseBuildDiagnostics": true,
+    "cmake.ctest.parallelJobs": 1,
+    "cmake.configureSettings": {
+        "CMAKE_PROJECT_TOP_LEVEL_INCLUDES": "${env:VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake",
+        "CMAKE_MSVC_DEBUG_INFORMATION_FORMAT": "$<$<CONFIG:Debug,RelWithDebInfo>:Embedded>", // Embed debug information
+        "CMAKE_INSTALL_PREFIX": "${workspaceFolder}/.install/${command:cmake.buildType}",
+        //"RANGESNEXT_CATCH2": "PRIVATE",
+    },
+    "C_Cpp.codeAnalysis.clangTidy.enabled": true,
+    "C_Cpp.codeAnalysis.runAutomatically": true,
+    "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
+    "C_Cpp.default.intelliSenseMode": "msvc-x64",
+    "C_Cpp.default.cStandard": "c11",
+    "C_Cpp.default.cppStandard": "c++20",
+    "C_Cpp.default.compileCommands": "${workspaceFolder}/build/compile_commands.json",
+    "C_Cpp.vcpkg.enabled": true,
+}
