@@ -25,6 +25,7 @@ else()
     target_link_libraries(rangesnext_test PRIVATE rangesnext Catch2::Catch2WithMain)
 endif()
 
+set_property(GLOBAL PROPERTY CTEST_TARGETS_ADDED 1) # removes the 28 spam build targets like ContinuousBuild, ContinuousConfigure, etc.
 include(CTest)
 add_test(NAME rangesnext COMMAND rangesnext_test)
 
